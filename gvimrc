@@ -69,5 +69,6 @@ map <C-s> <Esc>:w<CR>
 
 set textwidth=80
 set wrap
-colorscheme molokai
+colorscheme darkeclipse  " the dark scheme
+"colorscheme soso
 set guioptions+=b
