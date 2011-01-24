@@ -75,3 +75,6 @@ noremap <Up> gk
 noremap <Down> gj
 noremap <Up> gk
 noremap <Down> gj
+
+set grepprg=grep\ -nH\ $*
+
