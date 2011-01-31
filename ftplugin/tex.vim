@@ -1,4 +1,6 @@
-let g:Tex_UseMakefile=1
+let g:Tex_UseMakefile = 1
+let g:Tex_DefaultTargetFormat = 'pdf'
+
 
 " ---------------- Suggested Settings ---------------
 " this is mostly a matter of taste. but LaTeX looks good with just a bit

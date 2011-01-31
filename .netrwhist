@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/usr/share/cmake-2.8/Modules/FindCUDA'
 let g:netrw_dirhist_2='/media/storage/sim/other_edit'
 let g:netrw_dirhist_3='/home/duncan/.alliance/data/db'
+let g:netrw_dirhist_4='/home/duncan/.xmonad'
