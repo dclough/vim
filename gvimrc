@@ -72,7 +72,9 @@ set wrap
 colorscheme molokai  " the dark scheme
 "colorscheme soso
 set guioptions+=b
-
+set guioptions-=T
+set guioptions-=m
+set scrolloff=5
 "---------Start vim latex requirements---------
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
