@@ -116,8 +116,9 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the curors - when moving vertical..
-set so=7
+" Set 5 lines to the curors - when moving vertical..  There will always be x
+" lines above and below the cursor
+set so=5
 
 set wildmenu "Turn on WiLd menu
 
@@ -128,11 +129,11 @@ set cmdheight=2 "The commandbar height
 set hid "Change buffer - without saving
 
 " Set backspace config
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+set backspace=eol,start,indent "just means backspace works like it does in most other programs
+set whichwrap+=<,>,h,l   "moving left and right will move to the previous line
 
 set ignorecase "Ignore case when searching
-set smartcase
+set smartcase  "Ignores the 'ignorecase' if there are capitals in the search term.
 
 set hlsearch "Highlight search things
 
@@ -144,11 +145,11 @@ set magic "Set magic on, for regular expressions
 set showmatch "Show matching bracets when text indicator is over them
 set mat=2 "How many tenths of a second to blink
 
-" No sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
+"" No sound on errors
+"set noerrorbells
+"set novisualbell
+"set t_vb=
+"set tm=500
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -168,21 +169,22 @@ elseif MySys() == "linux"
 endif
 
 if has("gui_running")
-  set guioptions-=T
+  set guioptions-=Tm
+  set guioptions+=b
   set t_Co=256
   set background=dark
-  colorscheme peaksea
-  set nonu
+  colorscheme molokai
+  set nu		"enable line numbering
 else
-  colorscheme zellner
+  colorscheme molokai
   set background=dark
   
-  set nonu
+  set nu		"enable line numbering
 endif
 
 set encoding=utf8
 try
-    lang en_US
+    lang en_GB
 catch
 endtry
 
@@ -195,14 +197,18 @@ set ffs=unix,dos,mac "Default file types
 " Turn backup off, since most stuff is in SVN, git anyway...
 set nobackup
 set nowb
-set noswapfile
+			
+
+"This means if a large file is being editted then everything
+"will not be in memory
+set swapfile
 
 "Persistent undo
 try
     if MySys() == "windows"
       set undodir=C:\Windows\Temp
     else
-      set undodir=~/.vim_runtime/undodir
+      set undodir=~/.vim/undodir
     endif
     
     set undofile
@@ -213,17 +219,17 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set smarttab
+set noexpandtab		"tabs aren't automatically converted into spaces
+set shiftwidth=4	"number of spaces to use for each level of autoindent
+set tabstop=4		"number of spaces that a tab counts for
+set smarttab		"Adjusts newlines accounting to tabstop
 
-set lbr
-set tw=500
+set lbr			"vim won't wrap in the middle of words
+set tw=90		"the maximum number of characters in a line
 
-set ai "Auto indent
-set si "Smart indet
-set wrap "Wrap lines
+set ai 			"Auto indent - keep line indent levels the same
+set si			"Smart indet - is clever in the way it wraps lines
+set nowrap		" Don't qrap lines
 
 
 """"""""""""""""""""""""""""""
