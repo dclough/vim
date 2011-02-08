@@ -91,6 +91,9 @@
 " Sets how many lines of history VIM has to remember
 set history=700
 
+"Highlight the line that the cursor is currently on
+set cursorline
+
 " Enable filetype plugin
 filetype plugin on
 filetype indent on
