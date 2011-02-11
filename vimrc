@@ -297,10 +297,10 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " Useful on some European keyboards
-map Â½ $
-imap Â½ $
-vmap Â½ $
-cmap Â½ $
+"imap Â½ $
+"imap Â½ $
+"vmap Â½ $
+"cmap Â½ $
 
 
 func! Cwd()
@@ -351,8 +351,8 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
-map <right> :bn<cr>
-map <left> :bp<cr>
+"map <right> :bn<cr>
+"map <left> :bp<cr>
 
 " Tab configuration
 map <leader>tn :tabnew<cr>
@@ -592,6 +592,24 @@ noremap <leader>y :CommandTFlush<cr>
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
 
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim-LaTeX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
