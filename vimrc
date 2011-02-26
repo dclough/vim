@@ -228,7 +228,7 @@ set tabstop=4		"number of spaces that a tab counts for
 set smarttab		"Adjusts newlines accounting to tabstop
 
 set lbr			"vim won't wrap in the middle of words
-set tw=90		"the maximum number of characters in a line
+set tw=500		"the maximum number of characters in a line
 
 set ai 			"Auto indent - keep line indent levels the same
 set si			"Smart indet - is clever in the way it wraps lines
