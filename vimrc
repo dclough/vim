@@ -110,10 +110,10 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
-map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+map <leader>e :e! ~/.vim/vimrc<cr>
 
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+autocmd! bufwritepost vimrc source ~/.vim/vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,7 +122,7 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 " Set 5 lines to the curors - when moving vertical..  There will always be x
 " lines above and below the cursor
 set so=5
-
+ 
 set wildmenu "Turn on WiLd menu
 
 set ruler "Always show current position
@@ -502,7 +502,7 @@ let g:miniBufExplSplitBelow=1
 
 let g:bufExplorerSortBy = "name"
 
-autocmd BufRead,BufNew :call UMiniBufExplorer
+"autocmd BufRead,BufNew :call UMiniBufExplorer
 
 map <leader>u :TMiniBufExplorer<cr>
 
@@ -625,4 +625,7 @@ au BufRead,BufNewFile ~/buffer iab <buffer> xh1 ================================
 map <leader>pp :setlocal paste!<cr>
 
 map <leader>bb :cd ..<cr>
+
+imap <C-s> <Esc>:w<CR>a
+map <C-s> <Esc>:w<CR>
 
