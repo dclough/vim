@@ -626,3 +626,4 @@ map <leader>bb :cd ..<cr>
 imap <C-s> <Esc>:w<CR>a
 map <C-s> <Esc>:w<CR>
 
+set showtabline=0  "disable the tab line now that buffers are being used...
