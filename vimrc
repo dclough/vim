@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: amix the lucky stiff
 "             http://amix.dk - amix@amix.dk
 "
@@ -139,6 +139,11 @@ set ignorecase "Ignore case when searching
 set smartcase  "Ignores the 'ignorecase' if there are capitals in the search term.
 
 set hlsearch "Highlight search things
+
+"Use F4 to turn of highlighting after a search
+noremap <F4> :set hlsearch! hlsearch?<CR>
+inoremap <F4> :set hlsearch! hlsearch?<CR>
+
 
 set incsearch "Make search act like search in modern browsers
 set nolazyredraw "Don't redraw while executing macros 
@@ -347,12 +352,15 @@ map <C-l> <C-W>l
 " Close the current buffer
 map <leader>bd :Bclose<cr>
 
+" Close and save current buffer
+map <leader>wc :w<cr>:Bclose<cr>
+
 " Close all the buffers
 map <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
-"map <right> :bn<cr>
-"map <left> :bp<cr>
+map <C-right> :bn<cr>
+map <C-left> :bp<cr>
 
 " Tab configuration
 map <leader>tn :tabnew<cr>
@@ -500,7 +508,6 @@ let g:miniBufExplSplitToEdge = 0
 let g:bufExplorerSortBy = "name"
 
 autocmd BufRead,BufNew :call UMiniBufExplorer
-
 map <leader>u :TMiniBufExplorer<cr>
 
 
@@ -627,3 +634,6 @@ imap <C-s> <Esc>:w<CR>a
 map <C-s> <Esc>:w<CR>
 
 set showtabline=0  "disable the tab line now that buffers are being used...
+
+
+
