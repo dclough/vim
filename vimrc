@@ -45,7 +45,7 @@
 " Plugins_Included:
 "     > minibufexpl.vim - http://www.vim.org/scripts/script.php?script_id=159
 "       Makes it easy to get an overview of buffers:
-"           info -> :e ~/.vim_runtime/plugin/minibufexpl.vim
+"           info -> :e ~/.vim/plugin/minibufexpl.vim
 "
 "     > bufexplorer - http://www.vim.org/scripts/script.php?script_id=42
 "       Makes it easy to switch between buffers:
@@ -65,7 +65,7 @@
 "
 "     > mru.vim - http://www.vim.org/scripts/script.php?script_id=521
 "       Plugin to manage Most Recently Used (MRU) files:
-"           info -> :e ~/.vim_runtime/plugin/mru.vim
+"           info -> :e ~/.vim/plugin/mru.vim
 "
 "     > Command-T - http://www.vim.org/scripts/script.php?script_id=3025
 "       Command-T plug-in provides an extremely fast, intuitive mechanism for opening filesa:
@@ -484,7 +484,6 @@ map <leader>p :cp<cr>
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
 """"""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
 map <leader>o :BufExplorer<cr>
 
@@ -494,15 +493,13 @@ map <leader>o :BufExplorer<cr>
 """"""""""""""""""""""""""""""
 let g:miniBufExplModSelTarget = 1
 let g:miniBufExplorerMoreThanOne = 2
-let g:miniBufExplModSelTarget = 0
 let g:miniBufExplUseSingleClick = 1
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 25
-let g:miniBufExplSplitBelow=1
 
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplSplitToEdge = 0
 let g:bufExplorerSortBy = "name"
 
-"autocmd BufRead,BufNew :call UMiniBufExplorer
+autocmd BufRead,BufNew :call UMiniBufExplorer
 
 map <leader>u :TMiniBufExplorer<cr>
 
