@@ -359,8 +359,8 @@ map <leader>wc :w<cr>:Bclose<cr>
 map <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
-map <C-right> :bn<cr>
-map <C-left> :bp<cr>
+map <C-S-right> :bn<cr>
+map <C-S-left> :bp<cr>
 
 " Tab configuration
 map <leader>tn :tabnew<cr>
