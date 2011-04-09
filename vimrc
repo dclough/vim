@@ -110,7 +110,7 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
-map <leader>e :e! ~/.vim/vimrc<cr>
+map <leader>e :tabnew! ~/.vim/vimrc<cr>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim/vimrc
@@ -363,10 +363,13 @@ map <C-S-right> :bn<cr>
 map <C-S-left> :bp<cr>
 
 " Tab configuration
-map <leader>tn :tabnew<cr>
+map <leader>tn :tabnew
 map <leader>te :tabedit 
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
+
+" Edit files in new tabs instead of buffers
+" map gf :tabedit <cfile><cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
@@ -633,7 +636,7 @@ map <leader>bb :cd ..<cr>
 imap <C-s> <Esc>:w<CR>a
 map <C-s> <Esc>:w<CR>
 
-set showtabline=0  "disable the tab line now that buffers are being used...
+"set showtabline=0  "disable the tab line now that buffers are being used...
 
 
 
