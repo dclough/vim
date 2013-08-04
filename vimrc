@@ -88,6 +88,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable ALL the vim colours
+set t_Co=256
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -167,12 +171,12 @@ syntax enable "Enable syntax hl
 
 " Set font according to system
 if MySys() == "mac"
-  set gfn=Menlo:h14
+  set guifont=Menlo:h14
   set shell=/bin/bash
 elseif MySys() == "windows"
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
+  set guifont=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "linux"
-  set gfn=Monospace\ 10
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
   set shell=/bin/bash
 endif
 
@@ -638,5 +642,5 @@ map <C-s> <Esc>:w<CR>
 
 "set showtabline=0  "disable the tab line now that buffers are being used...
 
-
-
+set mouse=a
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
