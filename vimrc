@@ -643,4 +643,17 @@ map <C-s> <Esc>:w<CR>
 "set showtabline=0  "disable the tab line now that buffers are being used...
 
 set mouse=a
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+set viminfo='50,/100,:100
+
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
